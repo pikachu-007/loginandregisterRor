@@ -1,0 +1,485 @@
+  [1m[35m (23.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS `regandlog_test`[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE DATABASE `regandlog_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (8.7ms)[0m  [1m[35mDROP TABLE IF EXISTS `users` CASCADE[0m
+  [1m[35m (30.7ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `email` varchar(255), `password_digest` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, UNIQUE INDEX `index_users_on_email` (`email`)) DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (3.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20220203171008)[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'test', '2022-02-04 03:26:35.674027', '2022-02-04 03:26:35.674027')[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.4ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('schema_sha1', '6c1320466975b62cfae1c7baf461b589b40515cf', '2022-02-04 03:26:35.680393', '2022-02-04 03:26:35.680393')[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (4.4ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$54hVSz.Ka/XtS5YmaUs2yeYKKxf6QEq.zJIOS.gfYUTTSlcxNA8jm', '2022-02-04 03:29:35.565117', '2022-02-04 03:29:35.565117'), (298486374, 'MyString', 'MyString', '$2a$12$2vMriqLEFqCtGwVcoORmCeyABxq3nnJ8CaFbU3hiRm2LYJzAdwauK', '2022-02-04 03:29:35.565117', '2022-02-04 03:29:35.565117')[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (2.2ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$UdrVCn649zAnxbtHElcLGO4Dk1M44lEBjTAQ6191/8/XPl9XwTei2', '2022-02-04 03:29:36.232804', '2022-02-04 03:29:36.232804'), (298486374, 'MyString', 'MyString', '$2a$12$9.H6cozPrv9drbwkPvbVfOLNdamDSD010q6QLizmDyZRpl8QJDrZq', '2022-02-04 03:29:36.232804', '2022-02-04 03:29:36.232804')[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$gzf2tWgd5d6H.tI/iNuQNeBoNFIlyROgIOqa9e8OZLcxCzTxibj3i', '2022-02-04 03:29:36.749153', '2022-02-04 03:29:36.749153'), (298486374, 'MyString', 'MyString', '$2a$12$174igKzzKPITYR5P8S03FewIMeRiFQjAtw.hthNh2F.blcsjOw66W', '2022-02-04 03:29:36.749153', '2022-02-04 03:29:36.749153')[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.3ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$bpzHZy4415Hw48meIh5NqelLLmciBpNOKD821K92i.Dy9yoaWK7aK', '2022-02-04 03:29:37.270963', '2022-02-04 03:29:37.270963'), (298486374, 'MyString', 'MyString', '$2a$12$vpjrnqJeP3Wp6GYF5U/nj.DmG43jSEJPYcnRJl2v/TrU6kLR9pd5y', '2022-02-04 03:29:37.270963', '2022-02-04 03:29:37.270963')[0m
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.3ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$JsHGt57ZN/c3vvnJkY4mPeh36FBkwMUWlMu3GoLyisHfVxGJj3BBK', '2022-02-04 03:29:37.778396', '2022-02-04 03:29:37.778396'), (298486374, 'MyString', 'MyString', '$2a$12$Ih4R0RBSszB61QuVHYsvgecYPmnJegohIvbz907MpxMyEewnTPV76', '2022-02-04 03:29:37.778396', '2022-02-04 03:29:37.778396')[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.3ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$qmHch6aQfScGUbvlZy5.ceF6eGjBiL3aQ6TU7SkImtNm5LwKUc/iG', '2022-02-04 03:29:38.307878', '2022-02-04 03:29:38.307878'), (298486374, 'MyString', 'MyString', '$2a$12$IClm1wU0oAGPO2gEXASNNejAxIbrcV8CvEqVutUHa8YNJtE5bZaNO', '2022-02-04 03:29:38.307878', '2022-02-04 03:29:38.307878')[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$YXYyYfHFUGzQ9FygF9eSj.aZbpBRRzai2JXAjqHW8G5QjIVYBQpFq', '2022-02-04 03:29:38.831684', '2022-02-04 03:29:38.831684'), (298486374, 'MyString', 'MyString', '$2a$12$oqIfcScSIW/9lQqfW0jaR.SwhklJ4TnuRAqoSWfXAHVGN/NjWaNwG', '2022-02-04 03:29:38.831684', '2022-02-04 03:29:38.831684')[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.6ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.4ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$8381jbDNRI8zEmYuCjsA0elP0V8Y/NNzwKFrioynho1BvHjvMC2GW', '2022-02-04 04:26:29.246600', '2022-02-04 04:26:29.246600'), (298486374, 'MyString', 'MyString', '$2a$12$8tF8/dp8rkfm/vg.U6L9xuTo1KPfgcDu.cdOqe9n4ePqA.Og71k6G', '2022-02-04 04:26:29.246600', '2022-02-04 04:26:29.246600')[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$VttCbzrd4Cm4fbU6NTzj8ewkv767ECAozsDV.velsIj4wAvGC5S6m', '2022-02-04 04:26:29.909004', '2022-02-04 04:26:29.909004'), (298486374, 'MyString', 'MyString', '$2a$12$VX7hkn08Gw1Lr6gVuSfD3Ox.0jRP8xu6YkLG5fpW/DGA5IP9dzSlC', '2022-02-04 04:26:29.909004', '2022-02-04 04:26:29.909004')[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$3P8VladK1Xx1uYMc5t.4Y.aP8PQYb.P/Xkr9p7jzAEQEcboHtUuvi', '2022-02-04 04:26:30.405744', '2022-02-04 04:26:30.405744'), (298486374, 'MyString', 'MyString', '$2a$12$5TyLudBMijNqvjzlm7wNE.hijkHWIPpYnUpkWqlYqVv1Qx85pJKbi', '2022-02-04 04:26:30.405744', '2022-02-04 04:26:30.405744')[0m
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$Nd.Vj.zxgF7MiyIVfQ1rAOWUHZrjFRHEshMTnFMh7FDRLWckiNLHa', '2022-02-04 04:26:30.933883', '2022-02-04 04:26:30.933883'), (298486374, 'MyString', 'MyString', '$2a$12$Kd9J9demaI9DOz4rf.U/1ujyqT98bD2htJ/nSrmO1BB48nzEpkHV6', '2022-02-04 04:26:30.933883', '2022-02-04 04:26:30.933883')[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.3ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$tUlYRvbXuhTlsFGn5BcExOVB4zJelSCAQLRa812NTtmnPUGq8RsHm', '2022-02-04 04:26:31.438731', '2022-02-04 04:26:31.438731'), (298486374, 'MyString', 'MyString', '$2a$12$7hkj9wBO3HguJhHZu6O0yO7Fu6xJt4rPF5YDrkQGngeOnHfvbWoDe', '2022-02-04 04:26:31.438731', '2022-02-04 04:26:31.438731')[0m
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.3ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$cXUJsDw72OlsSVrvN.s0WuWlYnl.4ygR/.nC5s1NynUMc84PdtmFS', '2022-02-04 04:26:31.951741', '2022-02-04 04:26:31.951741'), (298486374, 'MyString', 'MyString', '$2a$12$M4DjFxCDLC.bMnFSz7HUX.FsiuGYVzI9iZm3AECfCWZ0S.lN1COOS', '2022-02-04 04:26:31.951741', '2022-02-04 04:26:31.951741')[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$4jG0jlYsshqQAsIZuFjnc.JGBWsW8iYUip3Ou7J5wvVNtA6N8ZwO6', '2022-02-04 04:26:32.456943', '2022-02-04 04:26:32.456943'), (298486374, 'MyString', 'MyString', '$2a$12$WfYdqC9maG2Hch0ipZm4/uwfiy8G7JKneIrjvhQ6FrOtbnxSSHU0W', '2022-02-04 04:26:32.456943', '2022-02-04 04:26:32.456943')[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (3.0ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$hzhIJ5lQe1j.lGqH9jV3lex64uLmE4744a0Ve6rbwaO36IoDLaG4W', '2022-02-06 18:32:48.447166', '2022-02-06 18:32:48.447166'), (298486374, 'MyString', 'MyString', '$2a$12$tPEfCQtBuqIf8tMyRMTyV.NHCXexmJPvNkttIcv8Ah6ORcvAYGBK2', '2022-02-06 18:32:48.447166', '2022-02-06 18:32:48.447166')[0m
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$ZLeZaezb6bswJcN3eCMhH.me7Gb6CR6s4g0myaoOc4cSGdNyI911K', '2022-02-06 18:32:49.208978', '2022-02-06 18:32:49.208978'), (298486374, 'MyString', 'MyString', '$2a$12$h.TnN4JftNtaAa5CWHN/lux9vAksf/35Wke8H0wY5j7NGaHM.HnbK', '2022-02-06 18:32:49.208978', '2022-02-06 18:32:49.208978')[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.3ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$45rueGBmD3jIZU4sDio9QeKnDWxD.mAGNoBVLmgg2LHW/9fqFojoe', '2022-02-06 18:32:49.733404', '2022-02-06 18:32:49.733404'), (298486374, 'MyString', 'MyString', '$2a$12$IYuVvvmGa5bFFnDqFiux7u5CykqBecFlhqLBmWVt9B3/b9jchBsOi', '2022-02-06 18:32:49.733404', '2022-02-06 18:32:49.733404')[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$7hVc87xAU9lkbrJPiqKYsuJXXZNIanR4S3T4ZJEC.YBe/c5j9zlY2', '2022-02-06 18:32:50.257145', '2022-02-06 18:32:50.257145'), (298486374, 'MyString', 'MyString', '$2a$12$ouIC6YgEp39K02hGAznID.ory2BarIxSrbAiHiL0ZmBWwnaK/aKx6', '2022-02-06 18:32:50.257145', '2022-02-06 18:32:50.257145')[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$uN9I2NCAWpRXL/FQ.kz3JOuX1M.VxP8AhoH8kIEnxgXp/ON3wYCSG', '2022-02-06 18:32:50.787303', '2022-02-06 18:32:50.787303'), (298486374, 'MyString', 'MyString', '$2a$12$WAvQeyssddCHBpoFhOVe/.FVbVqd8u/fJ.eq7UgnrpOhPjGEwgno.', '2022-02-06 18:32:50.787303', '2022-02-06 18:32:50.787303')[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$58vz9Rsrhcy3NpznCQ/ZV.kF5oGqdCBTr2KYTgjtxuzOYEwRXHol6', '2022-02-06 18:32:51.315895', '2022-02-06 18:32:51.315895'), (298486374, 'MyString', 'MyString', '$2a$12$tPWA7MDwgfFYq7SxLhIEIORZTIXV52q8Nwg5C4roFklL3NEqppJfG', '2022-02-06 18:32:51.315895', '2022-02-06 18:32:51.315895')[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.4ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$lSXEBXEpJ0/NZ8moxSJ59u4AmP1q3XJ35kFBLOTCMtPJ09EqJckYS', '2022-02-06 18:32:51.854317', '2022-02-06 18:32:51.854317'), (298486374, 'MyString', 'MyString', '$2a$12$dnMoXGO7Cn3lfQwWpy9b3u/RNE.Pcojuts9PuLICp55ZGzlESuO5y', '2022-02-06 18:32:51.854317', '2022-02-06 18:32:51.854317')[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (4.7ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (1.5ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$gVu6zFMEviVSZwGcFinXBO0ads95X/gvxWIN08056m9Hq1kjHClUG', '2022-02-07 03:26:11.775031', '2022-02-07 03:26:11.775031'), (298486374, 'MyString', 'MyString', '$2a$12$cj5d/nuFbLfB6rgHbnQ3jeVvNoI1zratcqGlOHq/HbxU/AyX4OY4O', '2022-02-07 03:26:11.775031', '2022-02-07 03:26:11.775031')[0m
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.3ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$lEa91ricEMdK/lx41G35Ru4dDoRMOGpo.Uo4tn4UK54yf8S4i8WaS', '2022-02-07 03:26:12.597871', '2022-02-07 03:26:12.597871'), (298486374, 'MyString', 'MyString', '$2a$12$6uDlx96olyncZ7K0xMB5Y.j6liorBXkn3iQYh8WVg5dKsCFZiMt/i', '2022-02-07 03:26:12.597871', '2022-02-07 03:26:12.597871')[0m
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.4ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$fdpO0JPhtVbnjCUiDfTpoeIUzBLqcIBIms81GYBOAu7WCaXCPlcB.', '2022-02-07 03:26:13.084843', '2022-02-07 03:26:13.084843'), (298486374, 'MyString', 'MyString', '$2a$12$1VcO1RS8CW85bD8iEHgWIOrD965aykuKiZzSMq/Vm2oK1EMPmumYS', '2022-02-07 03:26:13.084843', '2022-02-07 03:26:13.084843')[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.3ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$LLV0zg7iHM/5M/dbsvx0ouLzC/399ReuSigMf1UwKdvawFK1rVNOK', '2022-02-07 03:26:13.573240', '2022-02-07 03:26:13.573240'), (298486374, 'MyString', 'MyString', '$2a$12$JFpBQ11wxdSSel70IWtg4.EuPvWBBpTjuD41Q11vA7tMltLKvwUje', '2022-02-07 03:26:13.573240', '2022-02-07 03:26:13.573240')[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.3ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$Qb1JoOCwcYApDL8Ul60qtOr07ZZis26Xk3OlTF6vC9G84cenxPzgW', '2022-02-07 03:26:14.056171', '2022-02-07 03:26:14.056171'), (298486374, 'MyString', 'MyString', '$2a$12$Dfr/p78YrA4WNrEuuBLBW.HU3O8aPZpjW.MrScYDH5gUsQnFBpTJS', '2022-02-07 03:26:14.056171', '2022-02-07 03:26:14.056171')[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.4ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$vFHC5SV1lLEbu1fqrpFYRuyArVUAHkYbdW4/HWNFwU0xK4vi3n66e', '2022-02-07 03:26:14.527098', '2022-02-07 03:26:14.527098'), (298486374, 'MyString', 'MyString', '$2a$12$DXcFX8Ok2nVmN.HIv1CoLuWthYSdW6NhhToIXqcZNUc0M4s80HhwG', '2022-02-07 03:26:14.527098', '2022-02-07 03:26:14.527098')[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (1.9ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$YlaNH4UdqUs3AsIa7EaTiuxHbB0GXgKviT0RmSIbm9XXSaaoxhoVy', '2022-02-07 03:26:15.031617', '2022-02-07 03:26:15.031617'), (298486374, 'MyString', 'MyString', '$2a$12$mIiv5zCy596.4DjYkF2gseOobg2u51SL/xTNTUHwfXbVWahhWLh..', '2022-02-07 03:26:15.031617', '2022-02-07 03:26:15.031617')[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.8ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.3ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$0U1wsG43a334QW12e41aJODOvIsqQCcWTgoCXi1KnK/00X3vkArt2', '2022-02-07 03:50:19.149965', '2022-02-07 03:50:19.149965'), (298486374, 'MyString', 'MyString', '$2a$12$i6bvDykPjNBTHWHppTGAnugCJeiSRk7hUNTogn17u/nW0KpqMHXVq', '2022-02-07 03:50:19.149965', '2022-02-07 03:50:19.149965')[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$DzyJaXAfd0rDpGGVu9/M4ugNbBg2y9VvaJ5W4rF.C/tLYQnV3G/By', '2022-02-07 03:50:19.824326', '2022-02-07 03:50:19.824326'), (298486374, 'MyString', 'MyString', '$2a$12$6jskfI2/t3VrygfIySBJQe3e804WJmWNfutbQ6lEb8Vz9bwNckOJy', '2022-02-07 03:50:19.824326', '2022-02-07 03:50:19.824326')[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.3ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$IUwnRIkOnpNhWLN4gedSQu1QLeu4TUEfOS1h7RYeF14Pf5LJ3MuPK', '2022-02-07 03:50:20.354844', '2022-02-07 03:50:20.354844'), (298486374, 'MyString', 'MyString', '$2a$12$a.jzwOFUJ0gdr9XjefipKeeaIjNa5bOSS.WUwGxa1Uu6rgphK1flu', '2022-02-07 03:50:20.354844', '2022-02-07 03:50:20.354844')[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$O3bZI8wwmcbB1GyyNOohnOgFDmDHVaWrSrxuiST76aX4S/ZNB5GqG', '2022-02-07 03:50:20.892414', '2022-02-07 03:50:20.892414'), (298486374, 'MyString', 'MyString', '$2a$12$PkcZIJh3HfaqX2qOC3IzcuMT0nsj7Pl/lW/zxZM59Keu/8GTWApf.', '2022-02-07 03:50:20.892414', '2022-02-07 03:50:20.892414')[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$znm6mHViIncrZmLRkgrRQe1M2AuUQuCBXHsmLrqI1MIhQM40MADpi', '2022-02-07 03:50:21.427305', '2022-02-07 03:50:21.427305'), (298486374, 'MyString', 'MyString', '$2a$12$zY07AntErZoVRfHguhwC6eCKkbABOn5t87jynb0NZAsf4FEJslqKm', '2022-02-07 03:50:21.427305', '2022-02-07 03:50:21.427305')[0m
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.3ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$FmdsnJhV6/pfkq62N3334upFqc3BUBePgp3NJC8rKn0Annk6iSjeq', '2022-02-07 03:50:21.961108', '2022-02-07 03:50:21.961108'), (298486374, 'MyString', 'MyString', '$2a$12$1U3iVTMDtO1VHp4dQFPKlO5cYjnYmBfOc9wV73Zcn9pS81p55Taim', '2022-02-07 03:50:21.961108', '2022-02-07 03:50:21.961108')[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString', '$2a$12$1fnDN7OT.5GvQ7fb0MTrheUo76uyhMTjR6nOLw.02j1JMavQFbfma', '2022-02-07 03:50:22.492626', '2022-02-07 03:50:22.492626'), (298486374, 'MyString', 'MyString', '$2a$12$JZrt1bwqoj8UnAEiD.PWSu9kRVwtPxQK8sHHHjLTY.6LcCaKlnDBe', '2022-02-07 03:50:22.492626', '2022-02-07 03:50:22.492626')[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (2.6ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString@test.com', '$2a$12$TkUZq5aRbIczJ2kXSnUlf.Ttw7qYPb2h5d/vXnuX89.Z1sTwKfXCK', '2022-02-07 04:02:39.548672', '2022-02-07 04:02:39.548672'), (298486374, 'MyString2', 'MyString2', '$2a$12$8RRDAYrVagltPNUikSQXGeIfo5vfHtlovkg4np6dJQfLyJ12yBB5a', '2022-02-07 04:02:39.548672', '2022-02-07 04:02:39.548672')[0m
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+RegistrationsControllerTest: test_should_get_new
+------------------------------------------------
+Started GET "/registrations/new" for 127.0.0.1 at 2022-02-07 09:32:39 +0530
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 948)
+  Rendered layout layouts/application.html.erb (Duration: 324.4ms | Allocations: 89253)
+Completed 200 OK in 332ms (Views: 327.3ms | ActiveRecord: 0.0ms | Allocations: 95100)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+RegistrationsControllerTest: test_should_get_create
+---------------------------------------------------
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+RegistrationsControllerTest: test_should_get_destroy
+----------------------------------------------------
+Started GET "/registrations/destroy" for 127.0.0.1 at 2022-02-07 09:32:40 +0530
+Processing by RegistrationsController#destroy as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/destroy.html.erb within layouts/application
+  Rendered registrations/destroy.html.erb within layouts/application (Duration: 0.4ms | Allocations: 134)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | Allocations: 1524)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms | Allocations: 1940)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------
+HomeControllerTest: test_should_get_index
+-----------------------------------------
+Started GET "/home/index" for 127.0.0.1 at 2022-02-07 09:32:40 +0530
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 407)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 1858)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 2946)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------
+LoginsControllerTest: test_should_get_new
+-----------------------------------------
+Started GET "/logins/new" for 127.0.0.1 at 2022-02-07 09:32:40 +0530
+Processing by LoginsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logins/new.html.erb within layouts/application
+  Rendered logins/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 517)
+  Rendered layout layouts/application.html.erb (Duration: 28.9ms | Allocations: 1967)
+Completed 200 OK in 56ms (Views: 53.3ms | ActiveRecord: 0.0ms | Allocations: 2955)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+LoginsControllerTest: test_should_get_create
+--------------------------------------------
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+LoginsControllerTest: test_should_get_destroy
+---------------------------------------------
+Started GET "/logins/destroy" for 127.0.0.1 at 2022-02-07 09:32:40 +0530
+Processing by LoginsController#destroy as HTML
+Redirected to http://www.example.com/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 290)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (4.1ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString@test.com', '$2a$12$1Eqiy5RdWuqgQE4Zvccm8..XFj4qBpRI3MZLi/ghCiJ6CKd0ynRd.', '2022-02-07 04:09:14.695531', '2022-02-07 04:09:14.695531'), (298486374, 'MyString2', 'MyString2', '$2a$12$xuyN5qc8nDBjEXYlMmgyxucimbPFffMmKSCXveg4wSEFnoJ/MEMoC', '2022-02-07 04:09:14.695531', '2022-02-07 04:09:14.695531')[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+RegistrationsControllerTest: test_should_get_create
+---------------------------------------------------
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+RegistrationsControllerTest: test_should_get_destroy
+----------------------------------------------------
+Started GET "/registrations/destroy" for 127.0.0.1 at 2022-02-07 09:39:14 +0530
+Processing by RegistrationsController#destroy as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/destroy.html.erb within layouts/application
+  Rendered registrations/destroy.html.erb within layouts/application (Duration: 0.8ms | Allocations: 428)
+  Rendered layout layouts/application.html.erb (Duration: 63.3ms | Allocations: 33772)
+Completed 200 OK in 71ms (Views: 66.0ms | ActiveRecord: 0.0ms | Allocations: 39612)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+RegistrationsControllerTest: test_should_get_new
+------------------------------------------------
+Started GET "/registrations/new" for 127.0.0.1 at 2022-02-07 09:39:15 +0530
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 14.5ms | Allocations: 608)
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 1981)
+Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 0.0ms | Allocations: 2397)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------
+HomeControllerTest: test_should_get_index
+-----------------------------------------
+Started GET "/home/index" for 127.0.0.1 at 2022-02-07 09:39:15 +0530
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 11.1ms | Allocations: 407)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 1858)
+Completed 200 OK in 27ms (Views: 26.0ms | ActiveRecord: 0.0ms | Allocations: 2946)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+LoginsControllerTest: test_should_get_create
+--------------------------------------------
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------
+LoginsControllerTest: test_should_get_new
+-----------------------------------------
+Started GET "/logins/new" for 127.0.0.1 at 2022-02-07 09:39:15 +0530
+Processing by LoginsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logins/new.html.erb within layouts/application
+  Rendered logins/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 520)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 1983)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 2972)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.4ms)[0m  [1m[31mDELETE FROM `users`;
+INSERT INTO `users` (`id`, `name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyString@test.com', '$2a$12$2u4FKIBMFrhFLkzgKVdwA.8xJUqByzKo8QKgr6rOI0jcLa2RNXB2C', '2022-02-07 04:18:54.392137', '2022-02-07 04:18:54.392137'), (298486374, 'MyString2', 'MyString2', '$2a$12$N6iP4Av2AbgGTnsiedlok.sLavPps/s7FcWKnalfEvvCgSfBqra/G', '2022-02-07 04:18:54.392137', '2022-02-07 04:18:54.392137')[0m
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------
+HomeControllerTest: test_should_get_index
+-----------------------------------------
+Started GET "/home/index" for 127.0.0.1 at 2022-02-07 09:48:54 +0530
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 786)
+  Rendered layout layouts/application.html.erb (Duration: 62.0ms | Allocations: 33908)
+Completed 200 OK in 76ms (Views: 67.7ms | ActiveRecord: 0.0ms | Allocations: 39966)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------
+LoginsControllerTest: test_should_get_new
+-----------------------------------------
+Started GET "/logins/new" for 127.0.0.1 at 2022-02-07 09:48:54 +0530
+Processing by LoginsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logins/new.html.erb within layouts/application
+  Rendered logins/new.html.erb within layouts/application (Duration: 11.4ms | Allocations: 559)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 2009)
+Completed 200 OK in 28ms (Views: 26.7ms | ActiveRecord: 0.0ms | Allocations: 2998)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+LoginsControllerTest: test_should_get_create
+--------------------------------------------
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+RegistrationsControllerTest: test_should_get_create
+---------------------------------------------------
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+RegistrationsControllerTest: test_should_get_destroy
+----------------------------------------------------
+Started GET "/registrations/destroy" for 127.0.0.1 at 2022-02-07 09:48:54 +0530
+Processing by RegistrationsController#destroy as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/destroy.html.erb within layouts/application
+  Rendered registrations/destroy.html.erb within layouts/application (Duration: 0.4ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 1610)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 2599)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+RegistrationsControllerTest: test_should_get_new
+------------------------------------------------
+Started GET "/registrations/new" for 127.0.0.1 at 2022-02-07 09:48:54 +0530
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 376)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 1688)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 2060)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
