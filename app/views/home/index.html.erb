@@ -1,0 +1,16 @@
+<h1 align="center"><b>Welcome to the Portal</b></h1>
+<hr width="150px" align="center"/>
+<br />
+<br />
+<center>
+<% if @current_user %>
+ <h3>Hello <%= @current_user.name %>, Welcome to the site
+ </h3>
+  <br />
+ <%= link_to 'Log Out', logout_path%>
+<% else %>
+<%= link_to 'Sign Up', registrations_new_path %> <t /> or 
+ <%= link_to 'Log In', logins_new_path %>
+<% end %>
+<p id='notice'><%= notice %></p>
+</center>

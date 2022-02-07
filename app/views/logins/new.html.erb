@@ -1,0 +1,24 @@
+<h1 align="center"><b>Login</b></h1>
+<hr width="100px" align="center"/>
+<br />
+<center>
+<form action="/logins" method="POST">
+	<input type="hidden" name="authenticity_token" value="<%form_authenticity_token%>">
+<label><b>Email :</b></label>
+<input type="email" name="log[email]" placeholder="email" />
+<br />
+<br />
+<label><b>Password :</b></label>
+<input type="password" name="log[password]" placeholder="password"/>
+<br />
+<br />
+<input type="submit" value="submit" class="submit"/><t />
+<br />
+</form>
+<br />
+	<%= link_to 'New User ? Register here', registrations_new_path %>
+	<br />
+<br />
+	<%= link_to 'Back to home', home_index_path %>
+<center><p id='notice'><%= notice %></p></center>
+

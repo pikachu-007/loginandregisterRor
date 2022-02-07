@@ -1,0 +1,18 @@
+<h1 align="center"><b>Registration</b></h1>
+<hr width="150px" align="center"/>
+<form action="/register" method="POST">
+	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+	<label><b>Email :</b></label>
+	<input type="email" name="user[email]" placeholder="email" />
+	<br />
+	<br />
+	<label><b>Name :</b></label>
+	<input type="name" name="user[name]" placeholder="Name" /><br />
+	<br /><label><b>Password :</b></label>
+	<input type="password" name="user[password]" placeholder="password" /><br />
+	
+	<br /><input type="submit" name="submit" class="submit" />
+	<br />
+<br />
+	<%= link_to 'Back to home', home_index_path %>
+</form>
